@@ -16,13 +16,14 @@ var topHeadlines = "https://newsapi.org/v2/top-headlines?country=in&language=en&
 var newsByCategory = 'https://newsapi.org/v2/top-headlines?country=de&language=en&category=' + categoryName + '&apiKey=be167aaa10c64796a6a36823468d2f67';
 var newsEverything = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=be167aaa10c64796a6a36823468d2f67';
 
-window.onload = function() {
-    url = "https://newsapi.org/v2/top-headlines?country=in&language=en&apiKey=be167aaa10c64796a6a36823468d2f67";
+window.onload = function () {
+    url = "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=in&language=en&apiKey=be167aaa10c64796a6a36823468d2f67";
+    //url = "https://newsapi.org/v2/top-headlines?country=in&language=en&apiKey=be167aaa10c64796a6a36823468d2f67";
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.send();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 var result = JSON.parse(xhr.responseText);
